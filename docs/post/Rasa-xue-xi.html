@@ -126,7 +126,94 @@ poetry install</pre></div>
 rasa默认的某些模型，依赖spacy/mitie，如果需要开发也要安装。</p>
 <h2>Hello world</h2>
 <p>rasa的hello world实际上是搭建一个话术(或者说是bot/agent都行)。</p>
-<div class="highlight highlight-source-shell"><pre class="notranslate">rasa init</pre></div></div>
+<div class="highlight highlight-source-shell"><pre class="notranslate">rasa init</pre></div>
+<h2>Cheat Sheet<a href="https://rasa.com/docs/rasa/command-line-interface#cheat-sheet" rel="nofollow">#</a></h2>
+<table role="table">
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code class="notranslate">rasa init</code></td>
+<td align="left">Creates a new project with example training data, actions, and config files.</td>
+</tr>
+<tr>
+<td align="left"><code class="notranslate">rasa train</code></td>
+<td align="left">Trains a model using your NLU data and stories, saves trained model in<code class="notranslate">./models</code>.</td>
+</tr>
+<tr>
+<td align="left"><code class="notranslate">rasa interactive</code></td>
+<td align="left">Starts an interactive learning session to create new training data by chatting to your assistant.</td>
+</tr>
+<tr>
+<td align="left"><code class="notranslate">rasa shell</code></td>
+<td align="left">Loads your trained model and lets you talk to your assistant on the command line.</td>
+</tr>
+<tr>
+<td align="left"><code class="notranslate">rasa run</code></td>
+<td align="left">Starts a server with your trained model.</td>
+</tr>
+<tr>
+<td align="left"><code class="notranslate">rasa run actions</code></td>
+<td align="left">Starts an action server using the Rasa SDK.</td>
+</tr>
+<tr>
+<td align="left"><code class="notranslate">rasa visualize</code></td>
+<td align="left">Generates a visual representation of your stories.</td>
+</tr>
+<tr>
+<td align="left"><code class="notranslate">rasa test</code></td>
+<td align="left">Tests a trained Rasa model on any files starting with<code class="notranslate">test_</code>.</td>
+</tr>
+<tr>
+<td align="left"><code class="notranslate">rasa test e2e</code></td>
+<td align="left">Runs end-to-end testing fully integrated with the action server that serves as acceptance testing.</td>
+</tr>
+<tr>
+<td align="left"><code class="notranslate">rasa data split nlu</code></td>
+<td align="left">Performs a 80/20 split of your NLU training data.</td>
+</tr>
+<tr>
+<td align="left"><code class="notranslate">rasa data split stories</code></td>
+<td align="left">Do the same as<code class="notranslate">rasa data split nlu</code>, but for your stories data.</td>
+</tr>
+<tr>
+<td align="left"><code class="notranslate">rasa data convert</code></td>
+<td align="left">Converts training data between different formats.</td>
+</tr>
+<tr>
+<td align="left"><code class="notranslate">rasa data migrate</code></td>
+<td align="left">Migrates 2.0 domain to 3.0 format.</td>
+</tr>
+<tr>
+<td align="left"><code class="notranslate">rasa data validate</code></td>
+<td align="left">Checks the domain, NLU and conversation data for inconsistencies.</td>
+</tr>
+<tr>
+<td align="left"><code class="notranslate">rasa export</code></td>
+<td align="left">Exports conversations from a tracker store to an event broker.</td>
+</tr>
+<tr>
+<td align="left"><code class="notranslate">rasa evaluate markers</code></td>
+<td align="left">Extracts markers from an existing tracker store.</td>
+</tr>
+<tr>
+<td align="left"><code class="notranslate">rasa marker upload</code></td>
+<td align="left">Upload marker configurations to Analytics Data Pipeline</td>
+</tr>
+<tr>
+<td align="left"><code class="notranslate">rasa license</code></td>
+<td align="left">Display licensing information.</td>
+</tr>
+<tr>
+<td align="left"><code class="notranslate">rasa -h</code></td>
+<td align="left">Shows all available commands.</td>
+</tr>
+</tbody>
+</table></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
 <div class="comments" id="comments"></div>

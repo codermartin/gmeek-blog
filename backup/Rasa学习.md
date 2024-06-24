@@ -13,3 +13,25 @@
 
 后面主要考虑先学习 rasa opensource，然后根据需要涉及到 rasa enterprise。
 参考：https://rasa.com/docs/rasa
+
+# 开始了
+## 安装
+rasa是python项目。正常玩的话，就用pip安装即可。
+```shell
+pip3 install rasa
+```
+自己需要开发的话，用源码安装。这里用了poetry而不是pip安装。poetry适合在什么场合使用？相比pip有什么异同？后续学习的坑又增加了。
+```shell
+curl -sSL https://install.python-poetry.org | python3 -
+git clone https://github.com/RasaHQ/rasa.git
+cd rasa
+poetry install
+```
+python3.10版本，如果涉及cryptography，还需要安装 rustc/cargo。貌似和加密相关。
+rasa默认的某些模型，依赖spacy/mitie，如果需要开发也要安装。
+
+## Hello world
+rasa的hello world实际上是搭建一个话术(或者说是bot/agent都行)。
+```shell
+rasa init
+```

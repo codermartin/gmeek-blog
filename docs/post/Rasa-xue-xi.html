@@ -42,7 +42,7 @@
 <meta property="og:url" content="https://codermartin.github.io/gmeek-blog/post/Rasa-xue-xi.html">
 <meta property="og:image" content="https://www.codermartin.top/favicon.ico">
 <title>Rasa学习</title>
-
+<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
 
 </head>
 <style>
@@ -112,7 +112,21 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <li>橘色是 第三方中间件</li>
 </ol>
 <p>后面主要考虑先学习 rasa opensource，然后根据需要涉及到 rasa enterprise。<br>
-参考：<a href="https://rasa.com/docs/rasa" rel="nofollow">https://rasa.com/docs/rasa</a></p></div>
+参考：<a href="https://rasa.com/docs/rasa" rel="nofollow">https://rasa.com/docs/rasa</a></p>
+<h1>开始了</h1>
+<h2>安装</h2>
+<p>rasa是python项目。正常玩的话，就用pip安装即可。</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate">pip3 install rasa</pre></div>
+<p>自己需要开发的话，用源码安装。这里用了poetry而不是pip安装。poetry适合在什么场合使用？相比pip有什么异同？后续学习的坑又增加了。</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate">curl -sSL https://install.python-poetry.org <span class="pl-k">|</span> python3 -
+git clone https://github.com/RasaHQ/rasa.git
+<span class="pl-c1">cd</span> rasa
+poetry install</pre></div>
+<p>python3.10版本，如果涉及cryptography，还需要安装 rustc/cargo。貌似和加密相关。<br>
+rasa默认的某些模型，依赖spacy/mitie，如果需要开发也要安装。</p>
+<h2>Hello world</h2>
+<p>rasa的hello world实际上是搭建一个话术(或者说是bot/agent都行)。</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate">rasa init</pre></div></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
 <div class="comments" id="comments"></div>

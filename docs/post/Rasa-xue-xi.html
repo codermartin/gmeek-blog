@@ -117,6 +117,27 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <h2>安装</h2>
 <p>rasa是python项目。正常玩的话，就用pip安装即可。</p>
 <div class="highlight highlight-source-shell"><pre class="notranslate">pip3 install rasa</pre></div>
+<p>生成的目录如下</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate">-<span class="pl-k">&gt;</span> % tree
+<span class="pl-c1">.</span>
+├── actions
+│   ├── actions.py
+│   ├── __init__.py
+│   └── __pycache__
+│       ├── actions.cpython-310.pyc
+│       └── __init__.cpython-310.pyc
+├── config.yml
+├── credentials.yml
+├── data
+│   ├── nlu.yml
+│   ├── rules.yml
+│   └── stories.yml
+├── domain.yml
+├── endpoints.yml
+├── models
+│   └── 20240626-133941-obliging-boundary.tar.gz
+└── tests
+    └── test_stories.yml</pre></div>
 <p>自己需要开发的话，用源码安装。这里用了poetry而不是pip安装。poetry适合在什么场合使用？相比pip有什么异同？后续学习的坑又增加了。</p>
 <div class="highlight highlight-source-shell"><pre class="notranslate">curl -sSL https://install.python-poetry.org <span class="pl-k">|</span> python3 -
 git clone https://github.com/RasaHQ/rasa.git
@@ -213,7 +234,12 @@ rasa默认的某些模型，依赖spacy/mitie，如果需要开发也要安装�
 <td align="left">Shows all available commands.</td>
 </tr>
 </tbody>
-</table></div>
+</table>
+<h2>模型训练</h2>
+<div class="highlight highlight-source-shell"><pre class="notranslate">rasa train</pre></div>
+<p>会在models目录下生成对应模型</p>
+<h2>模型测试</h2>
+<div class="highlight highlight-source-shell"><pre class="notranslate">rasa interactive</pre></div></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
 <div class="comments" id="comments"></div>

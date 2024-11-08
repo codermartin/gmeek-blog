@@ -32,3 +32,9 @@ fastapi结合pydantic，实现了运行时的数据检查，以及API文档的�
 ## 同步和异步的转换
 wsgi和asgi的转换：
 https://github.com/abersheeran/a2wsgi/tree/master
+
+# 一些中间件
+ msgpack: https://github.com/florimondmanca/msgpack-asgi
+starlette-middleware: https://www.starlette.io/middleware/
+awesome-middleware: https://github.com/florimondmanca/awesome-asgi
+

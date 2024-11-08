@@ -105,7 +105,10 @@ fastapi结合pydantic，实现了运行时的数据检查，以及API文档的�
 </ol>
 <blockquote>
 <p>这和使用协程时的注意事项是一个原理。在几年前我们团队尝试将gunicorn中的worker从gthread改为gevent的时候就发现了。因为我们无法完全改造使用的第三方库，我们最终还是使用了gthread。</p>
-</blockquote></div>
+</blockquote>
+<h2>同步和异步的转换</h2>
+<p>wsgi和asgi的转换：<br>
+<a href="https://github.com/abersheeran/a2wsgi/tree/master">https://github.com/abersheeran/a2wsgi/tree/master</a></p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>

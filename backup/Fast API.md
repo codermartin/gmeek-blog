@@ -20,3 +20,11 @@ fastapi结合pydantic，实现了运行时的数据检查，以及API文档的�
 
 ## 其他收获
 在读文档时，发现fastapi有好些有意思的技术科普文档。比如 [python的类型](https://fastapi.tiangolo.com/python-types/) [并发和并行](https://fastapi.tiangolo.com/async/#is-concurrency-better-than-parallelism) 都非常棒。
+
+# 同步和异步
+关于快速运行，有必要了解一些基础的信息和注意事项，确保我们知道什么时候异步框架才能快速运行。
+1. 所有异步函数定义需要使用async关键词，调用的时候都需要使用await关键词。这使得编码变得更加复杂。如果忘加了，会怎样？
+2. 异步函数可以在asyncio.get_event_loop得到的loop中运行。实际上是一个线程，里面可以运行很多协程。
+3. 如果在异步函数中调用了同步函数，会阻塞loop中的所有协程。比如time.sleep是同步函数，asyncio.sleep是异步函数。
+4. 如果为了避免同步函数对异步框架造成的性能损失，可能把同步函数放在线程池中执行，也可以换用其他第三方库，用异步库替代同步库。这使得在引入第三方库时，都需要评估它是同步还是异步，否则可能对性能造成大的影响。
+> 这和使用协程时的注意事项是一个原理。在几年前我们团队尝试将gunicorn中的worker从gthread改为gevent的时候就发现了。因为我们无法完全改造使用的第三方库，我们最终还是使用了gthread。
